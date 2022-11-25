@@ -562,11 +562,16 @@ p {
 
     .testimonial {
         flex-direction: column;
+        align-items: center;
     }
 
     .testimonial__avatar {
         width: 80px;
         height: 80px;
+    }
+
+    .testimonial__avatar:nth-child(even) {
+        margin: 0;
     }
 
     .testimonial__speech-bubble {
