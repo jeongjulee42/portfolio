@@ -552,6 +552,10 @@ p {
         flex-direction: column;
     }
 
+    .category__btn {
+        padding:8px;
+    }
+
     .project {
         flex-grow: 1;
     }
