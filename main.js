@@ -35,10 +35,6 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact')
 })
 
-function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:'smooth'});
-}
 
 // Make home slkowly fade to transparent as the window scrolls down
 const home = document.querySelector('.home__container');
@@ -102,6 +98,12 @@ function selectNavItem(selected) {
     selectedNavItem.classList.remove('active');
     selectedNavItem = selected;
     selectedNavItem.classList.add('active');
+}
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+    selectNavItem(navItems(sectionIds.indexOf(selector)));
 }
 
 const observerOptions = {
