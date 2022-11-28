@@ -115,12 +115,25 @@ const observerCallback = (entries, observer) => {
             const index = sectionIds.indexOf(`#${entry.target.id}`);
         
             if(entry.boundingClientRect.y < 0) {
-                selectedIndex = index + 1;
+                selectedNavIndex = index + 1;
             } else {
-                selectedIndex = index - 1;
+                selectedNavIndex = index - 1;
             }
         } 
     });
 };
+
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+    if (window.scrollY === 0) {
+      selectedNavIndex = 0;
+    } else if (
+        Math.round(window.scrollY + window.innerHeight) >=
+        document.body.clientHeight
+    ) {
+      selectedNavIndex = navItems.length - 1;
+    }
+    selectNavItem(navItems[selectedNavIndex]);
+  });
