@@ -90,3 +90,8 @@ workBtnContainer.addEventListener('click', (e) => {
         projectContainer.classList.remove('anim-out');
     }, 300);
 });
+
+// intersection Observer
+const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
+const navItems = sectionIds.map(id=> document.querySelector(`[data-link="${id}"]`))
+const sections = sectionIds.map(id => document.querySelector(id));

@@ -122,6 +122,10 @@ p {
     display: flex;
 }
 
+.navbar__menu__item.active {
+    border: 1px solid var(--color-white);
+}
+
 .section {
     padding: 16px;
 }
