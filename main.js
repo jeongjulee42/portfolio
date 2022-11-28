@@ -95,3 +95,16 @@ workBtnContainer.addEventListener('click', (e) => {
 const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 const navItems = sectionIds.map(id=> document.querySelector(`[data-link="${id}"]`))
 const sections = sectionIds.map(id => document.querySelector(id));
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold:0.3,
+};
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+
+    });
+};
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
